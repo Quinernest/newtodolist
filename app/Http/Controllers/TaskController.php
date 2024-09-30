@@ -57,6 +57,18 @@ public function update(Request $request, $id)
     $task->save();
 
     return redirect()->route('tasks.show', $task->id)->with('success', 'Task updated successfully.');
+
+    // Find the task by ID
+    $task = Task::findOrFail($id);
+
+    // Toggle the 'completed' status
+    $task->completed = !$task->completed;
+
+    // Save the updated task
+    $task->save();
+
+    // Redirect back to the task details page or to the tasks list
+    return redirect()->route('tasks.show', $task->id)->with('status', 'Task updated successfully!');
 }
 
 public function show($id)
