@@ -1,6 +1,10 @@
-@extends('layouts.app')
-
-@section('content')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@yield('title', 'Laravel App')</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
 <div class="container mt-5">
     <h1>Task Details</h1>
 
@@ -12,4 +16,6 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+</html>
+
