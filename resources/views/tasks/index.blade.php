@@ -33,6 +33,9 @@
                 </form>
 
                 <div class="d-flex">
+                    <!-- View button -->
+                    <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-info btn-sm mx-2">View</a>
+
                     <!-- Edit button -->
                     <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-warning btn-sm mx-2">Edit</a>
                     

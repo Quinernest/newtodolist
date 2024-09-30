@@ -52,4 +52,10 @@ public function update(Request $request, $id)
     return redirect()->route('tasks.index')->with('success', 'Task updated successfully');
 }
 
+public function show($id)
+{
+    $task = Task::findOrFail($id);
+    return view('tasks.show', compact('task'));
+}
+
 }
