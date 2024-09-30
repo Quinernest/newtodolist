@@ -29,7 +29,11 @@
             <a href="{{ route('tasks.index') }}" class="btn btn-primary mt-2">Back to List</a>
         </div>
     </div>
+
+    
+
 </div>
 </body>
 </html>
+
 
