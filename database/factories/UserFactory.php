@@ -22,7 +22,7 @@ class UserFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
+    {sadadas
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
