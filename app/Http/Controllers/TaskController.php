@@ -50,6 +50,13 @@ public function update(Request $request, $id)
         'title' => 'required|string|max:255', // Validate input
     ]));
     return redirect()->route('tasks.index')->with('success', 'Task updated successfully');
+
+    $task = Task::findOrFail($id);
+    // Toggle the 'completed' status
+    $task->completed = !$task->completed;
+    $task->save();
+
+    return redirect()->route('tasks.show', $task->id)->with('success', 'Task updated successfully.');
 }
 
 public function show($id)
@@ -57,5 +64,7 @@ public function show($id)
     $task = Task::findOrFail($id);
     return view('tasks.show', compact('task'));
 }
+
+
 
 }
