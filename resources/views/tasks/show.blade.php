@@ -14,13 +14,16 @@
             <p class="card-text">Status: {{ $task->completed ? 'Completed' : 'Not Completed' }}</p>
 
             <!-- Form to mark as completed/uncompleted -->
-            <form action="{{ route('tasks.update', $task->id) }}" method="POST">
+            <form action="{{ route('tasks.update', $task->id) }}" method="POST" style="display:inline;">
                 @csrf
                 @method('PUT')
                 <button type="submit" class="btn {{ $task->completed ? 'btn-warning' : 'btn-success' }}">
                     {{ $task->completed ? 'Mark as Not Completed' : 'Mark as Completed' }}
                 </button>
             </form>
+
+            <!-- Edit button -->
+            <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-info mt-2">Edit</a>
 
             <!-- Back to List button -->
             <a href="{{ route('tasks.index') }}" class="btn btn-primary mt-2">Back to List</a>
@@ -29,3 +32,4 @@
 </div>
 </body>
 </html>
+
